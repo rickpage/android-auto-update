@@ -43,7 +43,8 @@ public class ApkUtils {
 
     private static Uri getApkUri(File apkFile) {
         Log.d(Constants.TAG, apkFile.toString());
-        //如果没有设置 SDCard 写权限，或者没有 SDCard,apk 文件保存在内存中，需要授予权限才能安装
+
+        //If the SDCard write permission is not set, or there is no SDCard, the apk file is saved in memory and needs to be granted permission to install.
         try {
             String[] command = {"chmod", "777", apkFile.toString()};
             ProcessBuilder builder = new ProcessBuilder(command);

@@ -1,25 +1,27 @@
-Android应用自动更新库(android-auto-update)
-===================
+Same as the [original Android应用自动更新库(android-auto-update)](https://github.com/feicien/android-auto-update), but with strings + README
+translated to english.
+Android application automatic update library (android-auto-update)
+====================
 
 
-该library项目实现了软件版本检查，apk文件下载，软件安装（Android app update checker,download and install apk）支持API 14+
+The library project implements software version checking, apk file download, software installation (Android app update checker, download and install apk) support API 14+
 
 
-#### 1.导入library项目
+#### 1. Import library project
 
-提供2种版本检查方式,在你的项目中添加以下代码即可
+Provide 2 versions of the check method, add the following code to your project
 
-- 使用Dialog
-   
+- Using Dialog
+
         UpdateChecker.checkForDialog(this);
 
-- 使用Notification
+- Use Notification
 
         UpdateChecker.checkForNotification(this);
 
 
 
-#### 2.截图
+#### 2. Screenshot
 
 ![screenshot](https://raw.github.com/feicien/android-auto-update/master/screenshots/sample.png)
 
@@ -36,4 +38,3 @@ Android应用自动更新库(android-auto-update)
 ![screenshot](https://raw.github.com/feicien/android-auto-update/master/screenshots/downloading.png)
 
 ![screenshot](https://raw.github.com/feicien/android-auto-update/master/screenshots/downloading_avd.png)
-
