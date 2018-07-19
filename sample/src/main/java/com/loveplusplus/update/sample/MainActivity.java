@@ -20,19 +20,20 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn1 = (Button) findViewById(R.id.button1);
         Button btn2 = (Button) findViewById(R.id.button2);
-
+        // You would use you own constants / url here and not the default url
+        final String url = "https://raw.githubusercontent.com/rickpage/android-auto-update/master/extras/update.json";
         btn1.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                UpdateChecker.checkForDialog(MainActivity.this);
+                UpdateChecker.checkForDialog(MainActivity.this, url);
             }
         });
         btn2.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                UpdateChecker.checkForNotification(MainActivity.this);
+                UpdateChecker.checkForNotification(MainActivity.this, url);
             }
         });
 

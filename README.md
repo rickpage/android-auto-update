@@ -1,6 +1,12 @@
 Same as the [original Android应用自动更新库(android-auto-update)](https://github.com/feicien/android-auto-update), but with strings + README
 translated to english.
 Android application automatic update library (android-auto-update)
+
+#### Improvements
+
+Instead of having to edit the library source code, updateChecker now takes an optional
+(soon to be required) URL where it can find a .json file describing the version info.
+
 ====================
 
 

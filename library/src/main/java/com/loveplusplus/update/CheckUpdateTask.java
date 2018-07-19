@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,14 +20,28 @@ class CheckUpdateTask extends AsyncTask<Void, Void, String> {
     private Context mContext;
     private int mType;
     private boolean mShowProgressDialog;
-    private static final String url = Constants.UPDATE_URL;
+    private String url;
 
-    CheckUpdateTask(Context context, int type, boolean showProgressDialog) {
+    CheckUpdateTask(Context context, int type, boolean showProgressDialog, String updateUrl) {
+        this.url = updateUrl;
+        this.init( context,  type,  showProgressDialog);
+    }
 
+    private void init(Context context, int type, boolean showProgressDialog) {
         this.mContext = context;
         this.mType = type;
         this.mShowProgressDialog = showProgressDialog;
+    }
 
+    CheckUpdateTask(Context context, int type, boolean showProgressDialog) {
+        init(context, type, showProgressDialog);
+        this.loadUrl();
+    }
+
+    private void loadUrl() {
+        // if nothing passed at start, grab default
+        // TODO: More useful to send an error than to do this, for if anyone imports the project
+        this.url = Constants.DEFAULT_UPDATE_URL;
     }
 
 
