@@ -22,7 +22,10 @@ class CheckUpdateTask extends AsyncTask<Void, Void, String> {
     private boolean mShowProgressDialog;
     private String url;
 
-    CheckUpdateTask(Context context, int type, boolean showProgressDialog, String updateUrl) {
+    CheckUpdateTask(Context context,
+                    int type,
+                    boolean showProgressDialog,
+                    String updateUrl) {
         this.url = updateUrl;
         this.init( context,  type,  showProgressDialog);
     }
@@ -41,7 +44,9 @@ class CheckUpdateTask extends AsyncTask<Void, Void, String> {
     private void loadUrl() {
         // if nothing passed at start, grab default
         // TODO: More useful to send an error than to do this, for if anyone imports the project
-        this.url = Constants.DEFAULT_UPDATE_URL;
+        if (this.url == null) {
+            this.url = Constants.DEFAULT_UPDATE_URL;
+        }
     }
 
 
